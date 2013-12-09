@@ -958,6 +958,11 @@ loop:
 	if (vm_paging_needed())
 		pagedaemon_wakeup();
 
+    /* Touch write page here. It could be handed out to DMA without ever being
+     * touched. */
+    if (!(req & VM_ALLOC_ZERO))
+        pmap_zero_page_area(m, 0, 32);
+
 	return (m);
 }
 
