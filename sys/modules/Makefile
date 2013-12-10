@@ -290,6 +290,7 @@ SUBDIR=	${_3dfx} \
 	${_vesa} \
 	vge \
 	vkbd \
+	vms \
 	${_vpo} \
 	vr \
 	vx \
